@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    tml-server_001:
+        image: terraria-tml-server
+        ports:
+        - "7777:7777"
+        volumes:
+        - ./config:/tml-server/config
+        - ./worlds:/tml-server/worlds
+        - ./mods:/tml-server/mods
+        - /tml-server/mods/ModPacks
+        - ./mod-configs:/root/.local/share/Terraria/ModLoader/Mod Configs
+        - ./logs:/root/.local/share/Terraria/ModLoader/Logs

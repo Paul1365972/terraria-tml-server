@@ -1,0 +1,11 @@
+# TML Data
+/logs/**
+/mod-configs/**
+/mods/**
+/worlds/**
+
+# JetBrains IDEA
+.idea/
+
+# Unignore README files
+!README.md
