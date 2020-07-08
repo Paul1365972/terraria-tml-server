@@ -1,13 +1,6 @@
-FROM alpine:3.12
+FROM frolvlad/alpine-mono:5.20-glibc
 
 ARG TMOD_VERSION=0.11.7.5
-
-RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
-    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
-    cert-sync /etc/ssl/certs/ca-certificates.crt && \
-    apk del .build-dependencies
-
-RUN apk add --no-cache tmux
 
 WORKDIR /tml-server
 
