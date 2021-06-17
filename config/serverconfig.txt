@@ -1,38 +1,38 @@
-#remove the # in front of commands to enable them.
+# Remove the # in front of commands to enable them.
 
-#Creates a new world if none is found. World size is specified by: 1(small), 2(medium), and 3(large).
+# Creates a new world if none is found. World size is specified by: 1(small), 2(medium), and 3(large).
 autocreate=1
 
-#Sets the world seed when using autocreate
+# Sets the world seed when using autocreate
 #seed=AwesomeSeed
 
-#Sets the name of the world when using autocreate
+# Sets the name of the world when using autocreate
 worldname=Terraria
 
-#Sets the difficulty of the world when using autocreate 0(normal), 1(expert)
+# Sets the difficulty of the world when using autocreate 0(normal), 1(expert)
 difficulty=1
 
-#Sets the max number of players allowed on a server.  Value must be between 1 and 255
+# Sets the max number of players allowed on a server.  Value must be between 1 and 255
 #maxplayers=8
 
-#Set the server password
+# Set the server password
 #password=p@55w0rd
 
-#Set the message of the day
+# Set the message of the day
 #motd=Please don’t cut the purple trees!
 
-#Adds addition cheat protection.
+# Adds addition cheat protection.
 #secure=1
 
-#Sets the server language from its language code. 
-#English = en-US, German = de-DE, Italian = it-IT, French = fr-FR, Spanish = es-ES, Russian = ru-RU, Chinese = zh-Hans, Portuguese = pt-BR, Polish = pl-PL,
+# Sets the server language from its language code.
+# English = en-US, German = de-DE, Italian = it-IT, French = fr-FR, Spanish = es-ES, Russian = ru-RU, Chinese = zh-Hans, Portuguese = pt-BR, Polish = pl-PL,
 #language=en-US
 
-#Reduces enemy skipping but increases bandwidth usage. The lower the number the less skipping will happen, but more data is sent. 0 is off.
+# Reduces enemy skipping but increases bandwidth usage. The lower the number the less skipping will happen, but more data is sent. 0 is off.
 #npcstream=60
 
-#Disables the text announcements Announcement Box makes when pulsed from wire.
+# Disables the text announcements Announcement Box makes when pulsed from wire.
 #disableannouncementbox=0
 
-#Sets the announcement box text messaging range in pixels, -1 for serverwide announcements.
+# Sets the announcement box text messaging range in pixels, -1 for serverwide announcements.
 #announcementboxrange=-1

@@ -2,9 +2,9 @@ ARG ALPINE_MONO_VERSION=5.20
 
 FROM frolvlad/alpine-mono:${ALPINE_MONO_VERSION}-glibc
 
-ARG TMOD_VERSION=0.11.7.5
+ARG TMOD_VERSION=0.11.8.4
 
-WORKDIR /tml-server
+WORKDIR /tml-server/
 
 ADD https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.Linux.v${TMOD_VERSION}.zip tml.zip
 
@@ -12,6 +12,10 @@ RUN unzip -q tml.zip && \
     find . ! -name 'tModLoaderServer.exe' ! -name 'FNA.dll' -delete
 
 COPY entrypoint.sh ./
+
+VOLUME [ "/root/.local/share/Terraria/ModLoader/Logs/" ]
+VOLUME [ "/tml-server/worlds/", "/tml-server/mods/" ]
+VOLUME [ "/tml-server/config/", "/root/.local/share/Terraria/ModLoader/Mod Configs/" ]
 
 EXPOSE 7777/tcp
 

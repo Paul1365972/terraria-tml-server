@@ -6,3 +6,8 @@
 [![Docker Pulls](https://badgen.net/docker/pulls/paul1365972/terraria-tml-server)](https://hub.docker.com/r/paul1365972/terraria-tml-server)
 
 Docker and docker-compose project for running a simple dedicated tModLoader server
+
+```shell
+git clone https://github.com/Paul1365972/terraria-tml-server.git
+docker-compose up -d
+```

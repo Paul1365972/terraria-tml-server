@@ -1,9 +1,11 @@
-# Generate Modpack
-mods=$(find ./mods/ -name '*.tmod' -print | sed 's/.*\//\"/' | sed 's/\.tmod/",/')
-echo -e "[\n$mods\n]" > ./mods/ModPacks/generated.json
+# Generate mod folder and modpack
+mkdir -p "./_mods/ModPacks/"
+cp ./mods/*.tmod ./_mods/
+mods=$(find ./_mods/ -name '*.tmod' -print | sed 's/.*\//\"/' | sed 's/\.tmod/",/')
+echo -e "[\n$mods\n]" > ./_mods/ModPacks/generated.json
 
 
-# Generate Config
+# Generate config
 cp -f ./config/serverconfig.txt ./serverconfig.txt
 
 function prop {
@@ -17,23 +19,24 @@ cat <<EOF >> ./serverconfig.txt
 
 worldpath=./worlds/
 banlist=./config/banlist.txt
-modpath=./mods
+modpath=./_mods/
 modpack=generated
 
 EOF
 
+worldname=$(prop "worldname")
 world=$(find ./worlds/ -name '*.wld' -print -quit)
-echo -e "world=${world:-./ILLEGAL}\n" >> ./serverconfig.txt
+echo -e "world=${world:-"./worlds/$worldname.wld"}\n" >> ./serverconfig.txt
 
 
-# Generate Argument
+# Generate arguments
 args="-config ./serverconfig.txt"
 
 if [ "$disableannouncementbox" = "1" ]; then
-    args=$args" -disableannouncementbox"
+    args="$args -disableannouncementbox"
 fi
 if [ -n "$announcementboxrange" ]; then
-    args=$args" -announcementboxrange $announcementboxrange"
+    args="$args -announcementboxrange $announcementboxrange"
 fi
 
 
