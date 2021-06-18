@@ -3,6 +3,7 @@ ARG ALPINE_MONO_VERSION=5.20
 FROM frolvlad/alpine-mono:${ALPINE_MONO_VERSION}-glibc
 
 ARG TMOD_VERSION=0.11.8.4
+ARG TSW_VERSION=1.0.2
 
 WORKDIR /tml-server/
 
@@ -10,6 +11,9 @@ ADD https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/
 
 RUN unzip -q tml.zip && \
     find . ! -name 'tModLoaderServer.exe' ! -name 'FNA.dll' -delete
+
+ADD https://github.com/joshbarrass/TerrariaServerWrapper/releases/download/v${TSW_VERSION}/TerrariaServerWrapper-x64 TerrariaServerWrapper
+RUN chmod +x TerrariaServerWrapper
 
 COPY entrypoint.sh ./
 

@@ -41,4 +41,5 @@ fi
 
 
 # Run Server
-mono --server --gc=sgen -O=all ./tModLoaderServer.exe $args
+export SERVER_EXECUTABLE="mono"
+exec ./TerrariaServerWrapper --server --gc=sgen -O=all ./tModLoaderServer.exe $args
