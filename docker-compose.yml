@@ -1,8 +1,8 @@
-version: '3.9'
+version: '3'
 
 services:
   tml-server:
-    image: terraria-tml-server
+    image: paul1365972/terraria-tml-server
     build: ./
     stdin_open: true
     tty: true
