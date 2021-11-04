@@ -7,7 +7,7 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - 7777:7777
+      - "7777:7777"
     volumes:
       - "./logs/:/root/.local/share/Terraria/ModLoader/Logs/"
       - "./worlds/:/tml-server/worlds/"
