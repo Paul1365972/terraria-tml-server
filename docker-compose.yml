@@ -14,3 +14,4 @@ services:
       - "./mods/:/tml-server/mods/"
       - "./config/:/tml-server/config/"
       - "./mod-configs/:/root/.local/share/Terraria/ModLoader/Mod Configs/"
+      - "./init/:/tml-server/init/"

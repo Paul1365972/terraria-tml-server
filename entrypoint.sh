@@ -1,3 +1,11 @@
+set -e
+set -x
+
+# Run init scripts
+for f in ./init/*.sh; do
+  bash "$f"
+done
+
 # Generate mod folder and modpack
 mkdir -p "./_mods/ModPacks/"
 cp ./mods/*.tmod ./_mods/

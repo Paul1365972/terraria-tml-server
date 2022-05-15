@@ -3,6 +3,7 @@
 /mod-configs/
 /mods/
 /worlds/
+/init/
 
 # JetBrains IDEA
 .idea/
