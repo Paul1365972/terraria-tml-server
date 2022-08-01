@@ -28,5 +28,6 @@ docker run --rm -itd \
   -v "$(pwd)/mods/:/tml-server/mods/" \
   -v "$(pwd)/config/:/tml-server/config/" \
   -v "$(pwd)/mod-configs/:/root/.local/share/Terraria/ModLoader/Mod Configs/" \
+  -v "$(pwd)/init/:/tml-server/init/" \
   paul1365972/terraria-tml-server
 ```

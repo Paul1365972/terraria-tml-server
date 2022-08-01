@@ -1,19 +1,18 @@
 set -e
-set -x
 
-# Run init scripts
+echo "Run init scripts"
 for f in ./init/*.sh; do
-  bash "$f"
+  sh ./initexec.sh "$f"
 done
 
-# Generate mod folder and modpack
+echo "Generate mod folder and modpack"
 mkdir -p "./_mods/ModPacks/"
 cp ./mods/*.tmod ./_mods/
 mods=$(find ./_mods/ -name '*.tmod' -print | sed 's/.*\//\"/' | sed 's/\.tmod/",/')
 echo -e "[\n$mods\n]" > ./_mods/ModPacks/generated.json
 
 
-# Generate config
+echo "Generate config and args"
 cp -f ./config/serverconfig.txt ./serverconfig.txt
 
 function prop {
@@ -48,6 +47,6 @@ if [ -n "$announcementboxrange" ]; then
 fi
 
 
-# Run Server
+echo "Starting server"
 export SERVER_EXECUTABLE="mono"
 exec ./TerrariaServerWrapper --server --gc=sgen -O=all ./tModLoaderServer.exe $args
